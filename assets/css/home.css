@@ -1,0 +1,161 @@
+:root {
+  --primary-blue: #0033a8;
+  --secondary-blue: #90acec;
+  --light-blue: #f0f9fe;
+  --text-dark: #1a1a1a;
+  --text-medium: #333333;
+  --white: #ffffff;
+  --button-hover: #002b85;
+  --box-shadow: rgba(0, 0, 0, 0.1);
+  --dark-blue: #2d3c72;
+  --gray: #363e49;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Verdana', 'Geneva', 'Tahoma', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--light-blue);
+  background-image: url('../images/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+h2 {
+  font-size: 20px;
+  color: var(--dark-blue);
+}
+
+span {
+  font-size: 14px;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow) 0px 4px 12px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.description {
+  background-color: var(--primary-blue);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: center;
+}
+
+.description h1,
+.description h2 {
+  font-size: 32px;
+  color: var(--white);
+}
+
+.description p {
+  font-size: 18px;
+  color: var(--light-blue);
+}
+
+.content-cards {
+  background: var(--light-blue);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 5px 5px #002a8596;
+  cursor: pointer;
+}
+
+.card:last-child {
+  grid-column: span 1;
+}
+
+.icon-description {
+  font-size: 50px;
+  color: var(--primary-blue);
+}
+
+.text-card {
+  font-size: 20px;
+  color: var(--dark-blue);
+}
+
+@media (max-width: 768px) {
+  .description h1,
+  .description h2 {
+    font-size: 24px;
+  }
+
+  .description p {
+    font-size: 16px;
+  }
+
+  .text-card {
+    font-size: 18px;
+  }
+
+  .icon-description {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .description h1,
+  .description h2 {
+    font-size: 20px;
+  }
+
+  .description p {
+    font-size: 14px;
+  }
+
+  .text-card {
+    font-size: 16px;
+  }
+
+  .icon-description {
+    font-size: 32px;
+  }
+}
