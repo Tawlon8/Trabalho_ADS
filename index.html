@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/css/login.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/logo-acessibilidade-white.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <section class="container">
+      <div class="left-login login">
+        <img src="assets/images/logo-login.svg" alt="Logo da plataforma" />
+        <p>
+          A acessibilidade assistida garante que pessoas com diferentes tipos de
+          deficiência possam navegar e utilizar este sistema de forma autônoma,
+          com o apoio de tecnologias como leitores de tela, navegação por
+          teclado e alto contraste. Nosso compromisso é oferecer uma experiência
+          digital inclusiva e acessível a todos.
+        </p>
+      </div>
+      <div class="right-login login">
+        <form action="/login" method="POST">
+          <h1>FAÇA SEU LOGIN</h1>
+
+          <div class="form-group">
+            <div class="input-login">
+              <input type="email" name="usuario" placeholder="Usuário" required />
+              <input type="password" name="senha" placeholder="Senha" required />
+            </div>
+
+            <div class="login-options">
+              <div class="remember">
+                <input type="checkbox" name="lembrar" id="lembrar" />
+                <label for="lembrar">Lembrar de mim</label>
+              </div>
+              <a class="redefinicao-senha" href="#">Esqueceu sua senha?</a>
+            </div>
+
+            <a  href="home.html" class="entrar-button">Entrar</a>
+          </div>
+
+          <span class="create-account">
+            Não tem conta?
+            <a href="#">Cadastre-se</a>
+          </span>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

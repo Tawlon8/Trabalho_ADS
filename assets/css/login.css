@@ -1,0 +1,179 @@
+:root {
+  --primary-color-blue: #0033a8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.left-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 20px;
+}
+
+.left-login img {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+p {
+  max-width: 600px;
+  color: #fff;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.right-login {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  
+}
+
+form {
+  background-color: #fff;
+  width: 400px;
+  height: 500px;
+  border-radius: 20px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color-blue);
+  margin-bottom: 30px;
+}
+
+.form-group {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-login {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.input-login input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border 0.3s ease;
+}
+
+.input-login input:focus {
+  border: 2px solid var(--primary-color-blue);
+  outline: none;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  width: 100%;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.remember input {
+  cursor: pointer;
+}
+
+.redefinicao-senha {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.redefinicao-senha:hover {
+  color: var(--primary-color-blue);
+}
+
+.entrar-button {
+  background-color: var(--primary-color-blue);
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.create-account {
+  font-size: 10px;
+  margin-top: 20px;
+}
+
+.create-account a {
+  color: var(--primary-color-blue);
+  text-decoration: none;
+}
+
+.create-account a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-login,
+  .right-login {
+    width: 100%;
+    padding: 20px;
+  }
+
+  form {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px 20px;
+  }
+
+  .form-group {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .input-login input,
+  .entrar-button,
+  .login-options {
+    width: 100%;
+  }
+}
