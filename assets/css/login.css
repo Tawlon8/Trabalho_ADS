@@ -34,6 +34,10 @@
   margin-bottom: 20px;
 }
 
+img{
+  width:500px;
+}
+
 p {
   max-width: 600px;
   color: #fff;
