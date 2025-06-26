@@ -17,7 +17,7 @@
     <section class="container">
 
       <div class="back-button">
-        <a href="home.html"><i class="fas fa-arrow-left"></i> Voltar para Home</a>
+        <a href="home.php"><i class="fas fa-arrow-left"></i> Voltar para Home</a>
       </div>
 
       <div class="content">
