@@ -123,6 +123,7 @@ span {
 }
 
 @media (max-width: 768px) {
+
   .description h1,
   .description h2 {
     font-size: 24px;
@@ -142,6 +143,7 @@ span {
 }
 
 @media (max-width: 480px) {
+
   .description h1,
   .description h2 {
     font-size: 20px;
@@ -158,4 +160,4 @@ span {
   .icon-description {
     font-size: 32px;
   }
-}
+

@@ -28,10 +28,7 @@ session_start();
     <label for="senha">Senha:</label>
     <input type="password" name="senha" id="senha" required>
 
-    <label for="tipo_deficiencia">Tipo de Deficiência:</label>
-    <select name="tipo_deficiencia_id" id="tipo_deficiencia" required>
-      <option value="">Selecione</option>
-      <!-- Preencher dinamicamente com PHP -->
+    
       <?php
         // conexão com banco (ajuste os dados conforme seu ambiente)
         $conn = new mysqli("localhost", "root", "", "banco_acessibilidade");

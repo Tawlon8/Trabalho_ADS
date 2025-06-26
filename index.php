@@ -32,14 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("Location: home.php");
             exit();
         } else {
-            $_SESSION['erro_login'] = "Senha incorreta.";
+            $_SESSION['erro_login'] = "Usuário ou Senha incorreta.";
         }
     } else {
         $_SESSION['erro_login'] = "Usuário não encontrado.";
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">

@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
-    $tipo_deficiencia_id = $_POST['tipo_deficiencia_id'];
+    
 
     // Criptografa a senha por segurança
     $hashed_password = password_hash($senha, PASSWORD_DEFAULT);
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $stmt->close();
 } else {
-    // Se o formulário não foi enviado diretamente, redireciona para a página de registro
+    // reenvia para area de cadastro
     header("Location: users_cadastro.php");
     exit();
 }
