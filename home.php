@@ -29,31 +29,31 @@
         </div>
 
         <div class="content-cards">
-          <a class="card" href="motora.html">
+          <a class="card" href="motora.php">
             <i class="fas fa-dumbbell icon-description"></i>
             <h3 class="text-card">Motora</h3>
           </a>
-          <a class="card" href="intelectual.html">
+          <a class="card" href="intelectual.php">
             <i class="fas fa-brain icon-description"></i>
             <h3 class="text-card">Intelectual</h3>
           </a>
-          <a class="card" href="auditiva.html">
+          <a class="card" href="auditiva.php">
             <i class="fas fa-deaf icon-description"></i>
             <h3 class="text-card">Auditiva</h3>
           </a>
-          <a class="card" href="visual.html">
+          <a class="card" href="visual.php">
             <i class="fas fa-low-vision icon-description"></i>
             <h3 class="text-card">Visual</h3>
           </a>
-          <a class="card" href="tea.html">
+          <a class="card" href="tea.php">
             <i class="fas fa-puzzle-piece icon-description"></i>
             <h3 class="text-card">Transtorno do Espectro Autista (TEA)</h3>
           </a>
-          <a class="card" href="multipla.html">
+          <a class="card" href="multipla.php">
             <i class="fas fa-users icon-description"></i>
             <h3 class="text-card">Múltipla</h3>
           </a>
-          <a class="card" href="outro.html">
+          <a class="card" href="outro.php">
             <i class="fas fa-question icon-description"></i>
             <h3 class="text-card">Outra / Não sei Dizer</h3>
           </a>
