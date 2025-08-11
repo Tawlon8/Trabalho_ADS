@@ -62,19 +62,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="right-login login">
       <form action="index.php" method="POST">
         <h1>FAÇA SEU LOGIN</h1>
-        <div class="right">
-          <h2>Login</h2>
-          <p>Acesse:</p>
-          <div class="form-group">
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+       <div class="form-group">
+            <div class="input-login">
+              <input type="email" name="email" placeholder="Usuário" required />
+              <input type="password" name="senha" placeholder="Senha" required />
+            </div>
+
+            <div class="login-options">
+              <div class="remember">
+                <input type="checkbox" name="lembrar" id="lembrar" />
+                <label for="lembrar">Lembrar de mim</label>
+              </div>
+              <a class="redefinicao-senha" href="form_esqueci_senha.php">Esqueceu sua senha?</a>
+            </div>
+
+            <button type="submit" class="entrar-button">Acessar</button>
           </div>
-          <div class="form-group">  
-            <label for="senha">Senha:</label>
-            <input type="password" id="senha" name="senha" required placeholder="Digite sua senha">
-          </div>
-          <button type="submit" class="acessar">Acessar</button>
-        </div>
         <span class="create-account">
           Não tem conta? <a href="users_cadastro.php">Cadastre-se</a>
         </span>

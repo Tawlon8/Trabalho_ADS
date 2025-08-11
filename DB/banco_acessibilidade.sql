@@ -18,9 +18,8 @@ CREATE TABLE usuarios (
     tipo_deficiencia_id INT,
     FOREIGN KEY (tipo_deficiencia_id) REFERENCES tipos_deficiencia(id)
 );
-
 -- Tabela: resetar senha
-CREATE TABLE password_resets (
+CREATE TABLE password_reset (
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT NOT NULL,
   token VARCHAR(128) NOT NULL UNIQUE,

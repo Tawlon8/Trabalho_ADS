@@ -28,7 +28,7 @@
           sugestões personalizadas.
         </p>
       </div>
-
+      <?php include __DIR__ . '/navbar.php'; ?>
       <div class="content-cards">
         <a class="card" href="motora.php">
           <i class="fas fa-dumbbell icon-description"></i>

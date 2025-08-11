@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 
 
     echo "Conexão com o banco de dados estabelecida com sucesso!";
-    $conn->close();
+    
     echo "<br>Conexão fechada.";
 
 }

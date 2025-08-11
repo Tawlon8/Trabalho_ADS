@@ -1,0 +1,23 @@
+/* navbar.css */
+.navbar {
+    background-color: #004080; /* azul escuro */
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.2);
+}
+
+.navbar a {
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #0066cc; /* azul mais claro no hover */
+    color: #fff;
+}
