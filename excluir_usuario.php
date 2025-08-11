@@ -18,14 +18,16 @@ if (isset($_GET['id'])) {
     $stmt->bind_param("i", $id);
 
     if ($stmt->execute()) {
-        echo "Usuário excluído com sucesso.";
-    } else {
-        echo "Erro ao excluir usuário: " . $stmt->error;
+       header("Location: index.php"); // redireciona para a página inicial
+        exit();
+    } else{ 
+    echo "Erro ao excluir usuário: " . $stmt->error;
     }
-
+    
     $stmt->close();
+
 } else {
-    echo "ID do usuário não fornecido.";
+    echo "ID do usuário não reconhecido.";
 }
 
 $conn->close();

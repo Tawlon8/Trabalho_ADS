@@ -10,12 +10,6 @@
   <link rel="shortcut icon" href="assets/images/logo-acessibilidade-white.png" type="image/x-icon" />
   <script src="https://kit.fontawesome.com/6ea2d8d5f6.js" crossorigin="anonymous"></script>
 
-
-
-
-
-
-
   <link rel="stylesheet" href="assets/css/excluir.css">
 </head>
 

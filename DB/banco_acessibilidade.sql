@@ -18,6 +18,18 @@ CREATE TABLE usuarios (
     tipo_deficiencia_id INT,
     FOREIGN KEY (tipo_deficiencia_id) REFERENCES tipos_deficiencia(id)
 );
+
+-- Tabela: resetar senha
+CREATE TABLE password_resets (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  token VARCHAR(128) NOT NULL UNIQUE,
+  expires_at DATETIME NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  INDEX (user_id),
+  FOREIGN KEY (user_id) REFERENCES usuarios(id) ON DELETE CASCADE
+);
+
 -- Tabela: atividades
 CREATE TABLE atividades (
     id INT AUTO_INCREMENT PRIMARY KEY,
