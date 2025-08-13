@@ -17,8 +17,8 @@ session_start();
     <p style="color: red; text-align:center;"><?php echo $_SESSION["erro_cadastro"]; unset($_SESSION["erro_cadastro"]); ?></p>
   <?php endif; ?>
 
-  <h2>Cadastro de Usuário</h2>
   <form action="processa_cadastro.php" method="POST">
+    <h2>Cadastro de Usuário</h2>
     <label for="nome">Nome:</label>
     <input type="text" name="nome" id="nome" required>
 
