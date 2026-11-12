@@ -1,0 +1,7 @@
+Diagramas do UNIA
+- 01_der.png                 modelo lógico do banco (tabelas, chaves e relacionamentos em notação pé de galinha)
+- 02_classes_dominio.png     diagrama de classes do domínio, na UML (classes, associações, composições e enumerações)
+- 03_arquitetura_mvc.png     diagrama de pacotes da UML (pastas do sistema e dependências entre elas)
+- 04_sequencia_sessao.png    diagrama de sequência da UML de uma sessão de mini games (fragmentos loop, opt e alt)
+Os arquivos .svg são a versão vetorial de cada diagrama: abrem em qualquer navegador e podem ser editados
+em editores de SVG (Inkscape, por exemplo). Os .png foram gerados a partir deles em 3x.

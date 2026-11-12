@@ -1,0 +1,10 @@
+/vendor/
+config/config.local.php
+public/uploads/*
+!public/uploads/.htaccess
+!public/uploads/.gitkeep
+.env
+*.log
+.DS_Store
+.vscode/
+.idea/

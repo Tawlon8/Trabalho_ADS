@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="567" height="600" viewBox="0 0 567 600" font-family="Arial, Helvetica, sans-serif">
+<rect width="100%" height="100%" fill="#fff"/>
+<rect x="6" y="6" width="150" height="18" fill="#e4e4e4" stroke="#000" stroke-width="1"/>
+<text x="81" y="19" font-size="10.5" font-weight="bold" text-anchor="middle">recuperacoes_senha</text>
+<rect x="6" y="24" width="150" height="19" fill="#fff" stroke="#000" stroke-width="1"/>
+<rect x="6" y="43" width="150" height="58" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="44,24 44,101" fill="none" stroke="#000" stroke-width="1"/>
+<text x="10" y="37" font-size="8.5" font-weight="bold">PK</text>
+<text x="49" y="37" font-size="9.5" text-decoration="underline">id</text>
+<text x="10" y="56" font-size="8.5" font-weight="bold">FK1</text>
+<text x="49" y="56" font-size="9.5">usuario_id</text>
+<text x="49" y="69" font-size="9.5">token</text>
+<text x="49" y="82" font-size="9.5">expira_em</text>
+<text x="49" y="95" font-size="9.5">criado_em</text>
+<rect x="206" y="6" width="150" height="18" fill="#e4e4e4" stroke="#000" stroke-width="1"/>
+<text x="281" y="19" font-size="10.5" font-weight="bold" text-anchor="middle">usuarios</text>
+<rect x="206" y="24" width="150" height="19" fill="#fff" stroke="#000" stroke-width="1"/>
+<rect x="206" y="43" width="150" height="71" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="244,24 244,114" fill="none" stroke="#000" stroke-width="1"/>
+<text x="210" y="37" font-size="8.5" font-weight="bold">PK</text>
+<text x="249" y="37" font-size="9.5" text-decoration="underline">id</text>
+<text x="249" y="56" font-size="9.5">nome</text>
+<text x="249" y="69" font-size="9.5">email</text>
+<text x="249" y="82" font-size="9.5">senha</text>
+<text x="249" y="95" font-size="9.5">perfil</text>
+<text x="249" y="108" font-size="9.5">criado_em</text>
+<rect x="406" y="6" width="150" height="18" fill="#e4e4e4" stroke="#000" stroke-width="1"/>
+<text x="481" y="19" font-size="10.5" font-weight="bold" text-anchor="middle">atividades</text>
+<rect x="406" y="24" width="150" height="19" fill="#fff" stroke="#000" stroke-width="1"/>
+<rect x="406" y="43" width="150" height="201" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="444,24 444,244" fill="none" stroke="#000" stroke-width="1"/>
+<text x="410" y="37" font-size="8.5" font-weight="bold">PK</text>
+<text x="449" y="37" font-size="9.5" text-decoration="underline">id</text>
+<text x="449" y="56" font-size="9.5">titulo</text>
+<text x="449" y="69" font-size="9.5">descricao</text>
+<text x="449" y="82" font-size="9.5">objetivo</text>
+<text x="449" y="95" font-size="9.5">materiais</text>
+<text x="449" y="108" font-size="9.5">area</text>
+<text x="449" y="121" font-size="9.5">imagem</text>
+<text x="449" y="134" font-size="9.5">imagem_alt</text>
+<text x="449" y="147" font-size="9.5">video</text>
+<text x="449" y="160" font-size="9.5">legenda</text>
+<text x="449" y="173" font-size="9.5">transcricao</text>
+<text x="449" y="186" font-size="9.5">fonte</text>
+<text x="449" y="199" font-size="9.5">formato</text>
+<text x="449" y="212" font-size="9.5">itens</text>
+<text x="410" y="225" font-size="8.5" font-weight="bold">FK1</text>
+<text x="449" y="225" font-size="9.5">usuario_id</text>
+<text x="449" y="238" font-size="9.5">criado_em</text>
+<rect x="6" y="136" width="150" height="18" fill="#e4e4e4" stroke="#000" stroke-width="1"/>
+<text x="81" y="149" font-size="10.5" font-weight="bold" text-anchor="middle">alunos</text>
+<rect x="6" y="154" width="150" height="19" fill="#fff" stroke="#000" stroke-width="1"/>
+<rect x="6" y="173" width="150" height="97" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="44,154 44,270" fill="none" stroke="#000" stroke-width="1"/>
+<text x="10" y="167" font-size="8.5" font-weight="bold">PK</text>
+<text x="49" y="167" font-size="9.5" text-decoration="underline">id</text>
+<text x="10" y="186" font-size="8.5" font-weight="bold">FK1</text>
+<text x="49" y="186" font-size="9.5">usuario_id</text>
+<text x="49" y="199" font-size="9.5">nome</text>
+<text x="49" y="212" font-size="9.5">data_nascimento</text>
+<text x="10" y="225" font-size="8.5" font-weight="bold">FK2</text>
+<text x="49" y="225" font-size="9.5">tipo_deficiencia_id</text>
+<text x="49" y="238" font-size="9.5">observacoes</text>
+<text x="49" y="251" font-size="9.5">consentimento</text>
+<text x="49" y="264" font-size="9.5">criado_em</text>
+<rect x="206" y="160" width="150" height="18" fill="#e4e4e4" stroke="#000" stroke-width="1"/>
+<text x="281" y="173" font-size="10.5" font-weight="bold" text-anchor="middle">tipos_deficiencia</text>
+<rect x="206" y="178" width="150" height="19" fill="#fff" stroke="#000" stroke-width="1"/>
+<rect x="206" y="197" width="150" height="45" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="244,178 244,242" fill="none" stroke="#000" stroke-width="1"/>
+<text x="210" y="191" font-size="8.5" font-weight="bold">PK</text>
+<text x="249" y="191" font-size="9.5" text-decoration="underline">id</text>
+<text x="249" y="210" font-size="9.5">nome</text>
+<text x="249" y="223" font-size="9.5">descricao</text>
+<text x="249" y="236" font-size="9.5">icone</text>
+<rect x="206" y="290" width="150" height="18" fill="#e4e4e4" stroke="#000" stroke-width="1"/>
+<text x="281" y="303" font-size="10.5" font-weight="bold" text-anchor="middle">atividade_tipos</text>
+<rect x="206" y="308" width="150" height="32" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="244,308 244,340" fill="none" stroke="#000" stroke-width="1"/>
+<text x="210" y="321" font-size="8.5" font-weight="bold">PK,FK1</text>
+<text x="249" y="321" font-size="9.5" text-decoration="underline">atividade_id</text>
+<text x="210" y="334" font-size="8.5" font-weight="bold">PK,FK2</text>
+<text x="249" y="334" font-size="9.5" text-decoration="underline">tipo_deficiencia_id</text>
+<rect x="6" y="306" width="150" height="18" fill="#e4e4e4" stroke="#000" stroke-width="1"/>
+<text x="81" y="319" font-size="10.5" font-weight="bold" text-anchor="middle">metas</text>
+<rect x="6" y="324" width="150" height="19" fill="#fff" stroke="#000" stroke-width="1"/>
+<rect x="6" y="343" width="150" height="97" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="44,324 44,440" fill="none" stroke="#000" stroke-width="1"/>
+<text x="10" y="337" font-size="8.5" font-weight="bold">PK</text>
+<text x="49" y="337" font-size="9.5" text-decoration="underline">id</text>
+<text x="10" y="356" font-size="8.5" font-weight="bold">FK1</text>
+<text x="49" y="356" font-size="9.5">aluno_id</text>
+<text x="49" y="369" font-size="9.5">area</text>
+<text x="49" y="382" font-size="9.5">descricao</text>
+<text x="49" y="395" font-size="9.5">nivel_inicial</text>
+<text x="49" y="408" font-size="9.5">professor_responsavel</text>
+<text x="49" y="421" font-size="9.5">revisar_em</text>
+<text x="49" y="434" font-size="9.5">criado_em</text>
+<rect x="206" y="380" width="150" height="18" fill="#e4e4e4" stroke="#000" stroke-width="1"/>
+<text x="281" y="393" font-size="10.5" font-weight="bold" text-anchor="middle">acompanhamentos</text>
+<rect x="206" y="398" width="150" height="19" fill="#fff" stroke="#000" stroke-width="1"/>
+<rect x="206" y="417" width="150" height="175" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="244,398 244,592" fill="none" stroke="#000" stroke-width="1"/>
+<text x="210" y="411" font-size="8.5" font-weight="bold">PK</text>
+<text x="249" y="411" font-size="9.5" text-decoration="underline">id</text>
+<text x="210" y="430" font-size="8.5" font-weight="bold">FK1</text>
+<text x="249" y="430" font-size="9.5">aluno_id</text>
+<text x="210" y="443" font-size="8.5" font-weight="bold">FK2</text>
+<text x="249" y="443" font-size="9.5">meta_id</text>
+<text x="210" y="456" font-size="8.5" font-weight="bold">FK3</text>
+<text x="249" y="456" font-size="9.5">atividade_id</text>
+<text x="249" y="469" font-size="9.5">origem</text>
+<text x="249" y="482" font-size="9.5">data_aplicacao</text>
+<text x="249" y="495" font-size="9.5">desempenho</text>
+<text x="249" y="508" font-size="9.5">rodadas</text>
+<text x="249" y="521" font-size="9.5">acertos</text>
+<text x="249" y="534" font-size="9.5">dicas</text>
+<text x="249" y="547" font-size="9.5">erros</text>
+<text x="249" y="560" font-size="9.5">tempo_segundos</text>
+<text x="249" y="573" font-size="9.5">observacao</text>
+<text x="249" y="586" font-size="9.5">criado_em</text>
+<polyline points="206,44 156,44" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="5,3"/>
+<polyline points="201,39 201,49" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="196,39 196,49" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="156,50 166,44 156,38" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="170.5" cy="44" r="3.5" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="356,60 406,60" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="5,3"/>
+<polyline points="361,65 361,55" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="370" cy="60" r="3.5" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="406,54 396,60 406,66" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="391.5" cy="60" r="3.5" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="226,114 226,150 156,150" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="5,3"/>
+<polyline points="221,119 231,119" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="221,124 231,124" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="156,156 166,150 156,144" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="170.5" cy="150" r="3.5" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="206,200 156,200" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="5,3"/>
+<polyline points="201,195 201,205" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="192" cy="200" r="3.5" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="156,206 166,200 156,194" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="170.5" cy="200" r="3.5" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="281,242 281,290" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="276,247 286,247" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="276,252 286,252" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="287,290 281,280 275,290" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="281" cy="275.5" r="3.5" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="481,244 481,315 356,315" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="476,249 486,249" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="476,254 486,254" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="356,321 366,315 356,309" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="370.5" cy="315" r="3.5" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="81,270 81,306" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="5,3"/>
+<polyline points="76,275 86,275" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="76,280 86,280" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="87,306 81,296 75,306" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="81" cy="291.5" r="3.5" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="156,255 181,255 181,400 206,400" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="5,3"/>
+<polyline points="161,260 161,250" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="166,260 166,250" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="206,394 196,400 206,406" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="191.5" cy="400" r="3.5" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="156,425 206,425" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="5,3"/>
+<polyline points="161,430 161,420" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="170" cy="425" r="3.5" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="206,419 196,425 206,431" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="191.5" cy="425" r="3.5" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="531,244 531,480 356,480" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="5,3"/>
+<polyline points="526,249 536,249" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="531" cy="258" r="3.5" fill="#fff" stroke="#000" stroke-width="1"/>
+<polyline points="356,486 366,480 356,474" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="370.5" cy="480" r="3.5" fill="#fff" stroke="#000" stroke-width="1"/>
+<rect x="406" y="500" width="150" height="94" fill="#fff" stroke="#000" stroke-width="1"/>
+<text x="412" y="513" font-size="9.5" font-weight="bold">Legenda</text>
+<polyline points="414,528 444,528" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="419,533 419,523" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="424,533 424,523" fill="none" stroke="#000" stroke-width="1"/>
+<text x="452" y="531.5" font-size="9">um e somente um</text>
+<polyline points="414,543 444,543" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="419,548 419,538" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="428" cy="543" r="3.5" fill="#fff" stroke="#000" stroke-width="1"/>
+<text x="452" y="546.5" font-size="9">zero ou um</text>
+<polyline points="414,558 444,558" fill="none" stroke="#000" stroke-width="1"/>
+<polyline points="414,564 424,558 414,552" fill="none" stroke="#000" stroke-width="1"/>
+<circle cx="428.5" cy="558" r="3.5" fill="#fff" stroke="#000" stroke-width="1"/>
+<text x="452" y="561.5" font-size="9">zero ou muitos</text>
+<polyline points="414,573 444,573" fill="none" stroke="#000" stroke-width="1"/>
+<text x="452" y="576.5" font-size="9">identificador</text>
+<polyline points="414,587 444,587" fill="none" stroke="#000" stroke-width="1" stroke-dasharray="5,3"/>
+<text x="452" y="590.5" font-size="9">não identificador</text>
+</svg>
