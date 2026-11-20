@@ -1,0 +1,135 @@
+% Gerado de tcc.md (exportado do Claude Docs) por ferramentas/gera_latex.php em 12/11/2026 21:45.
+% Para mudar o texto, edite este arquivo; se gerar de novo a partir do documento, as edições feitas aqui se perdem.
+
+\chapter{RESULTADOS E DISCUSSÃO}\label{cap:5}
+
+O UNIA foi concluído como protótipo funcional e passou em todas as verificações técnicas feitas. Este capítulo apresenta essas verificações, compara o sistema com o AppPEI, relata uma avaliação heurística de usabilidade e expõe as limitações, que delimitam o alcance dos resultados.
+
+\section{Verificação técnica}\label{sec:5.1}
+
+A Tabela~\ref{tab:2} resume a verificação descrita na seção~\ref{sec:3.4}.
+
+\begin{tabelacurta}
+\setlength{\largtab}{\dimexpr\linewidth-6\tabcolsep-0\arrayrulewidth-1pt\relax}
+\legenda{table}{Resultados da verificação técnica}\label{tab:2}\vspace{4pt}
+\begin{tabular}{L{0.2655}L{0.3326}L{0.4019}}
+\hline
+\textbf{Verificação} & \textbf{Escopo} & \textbf{Resultado} \\
+\hline
+Sintaxe (\textit{php -l}) & Todos os arquivos PHP do sistema & Sem erros \\
+Testes automatizados & 63 verificações das regras de negócio & 63 aprovadas, nenhuma falha \\
+Conferência das rotas & 45 rotas & Todas apontam para métodos existentes \\
+Teste de ponta a ponta & 30 verificações em banco temporário & 30 aprovadas, nenhuma falha \\
+Inspeção visual & Ficha do aluno e tela de cada mini game & Sem avisos do PHP e sem rolagem horizontal em tela estreita \\
+\hline
+\end{tabular}
+\fonte{elaboração própria (2026).}
+\end{tabelacurta}
+
+O teste de ponta a ponta executou o fluxo principal sobre os modelos e serviços, num banco MySQL temporário, no servidor MariaDB 10.4 do XAMPP, sem passar pelas telas de login. Ele confirmou que o catálogo tem 24 atividades executáveis, seis por área; que um aluno com deficiência auditiva recebe seis sugestões em cada área, exceto em Comunicação Oral, onde os jogos de ouvir não são sugeridos; que seis sessões com acertos crescentes geram, em cada área, seis registros e uma variação positiva; que o histórico do aluno reúne os 24 registros; que as sugestões somem depois que o aluno faz todos os jogos da área; e que a tela de cada um dos 12 formatos é desenhada sem erro.
+
+Esses resultados mostram que o sistema faz o que foi projetado para fazer: mede as respostas, classifica as sessões, separa os resultados por meta e calcula a evolução de forma consistente. Eles não mostram que a medição é válida do ponto de vista pedagógico, isto é, que um aluno classificado como “realiza sem necessidade de suporte” no jogo realiza a habilidade fora dele. Essa pergunta depende de avaliação com professores e alunos, que não foi feita.
+
+\section{Comparação com o AppPEI}\label{sec:5.2}
+
+O Quadro~\ref{qua:10} compara o UNIA com o AppPEI, sua principal referência.
+
+\begin{tabelacurta}
+\setlength{\largtab}{\dimexpr\linewidth-6\tabcolsep-4\arrayrulewidth-1pt\relax}
+\legenda{quadro}{Comparação entre o AppPEI e o UNIA}\label{qua:10}\vspace{4pt}
+\begin{tabular}{|L{0.2381}|L{0.3617}|L{0.4002}|}
+\hline
+\textbf{Aspecto} & \textbf{AppPEI} & \textbf{UNIA} \\
+\hline
+Plataforma & Planilha eletrônica do Google & Aplicação web em PHP e MySQL \\ \hline
+Foco & Elaboração do PEI & Acompanhamento e medição das metas do PEI \\ \hline
+Avaliação inicial & Inventário de habilidades nas quatro áreas, com priorização & Metas por área com nível de suporte inicial; sem inventário completo \\ \hline
+Proposta de intervenção & Registrada no plano & Catálogo de atividades com sugestões por meta \\ \hline
+Medição do desempenho & Não há & Acerto, dica e tempo em cada rodada \\ \hline
+Evolução ao longo do tempo & Não há & Indicadores e gráficos por meta \\ \hline
+Documento completo do PEI & Gerado pela ferramenta & Não gerado \\ \hline
+Uso em celular ou tablet & Sugestão dos avaliadores & Telas para toque; teste em tablet pendente \\ \hline
+Avaliação com usuários & Professores do CAp-UERJ & Ainda não realizada \\ \hline
+\end{tabular}
+\fonte{elaboração própria (2026), com base em Francisco (2023).}
+\end{tabelacurta}
+
+O UNIA não substitui o AppPEI. Faltam a ele o inventário de habilidades usado na avaliação inicial, a matriz completa de priorização e o documento final do plano. O que ele acrescenta está nas etapas em que o AppPEI para: a aplicação das atividades e a avaliação com replanejamento, as duas últimas do ciclo descrito por Francisco (2023). As duas ferramentas podem conviver: as habilidades priorizadas num PEI elaborado no AppPEI podem ser cadastradas como metas no UNIA e acompanhadas sessão a sessão.
+
+O UNIA também responde a parte das sugestões dos professores que avaliaram o AppPEI: trocou a planilha por páginas web, reuniu o acompanhamento numa única ficha por aluno e usa telas pensadas para toque. Em relação à norma, o sistema oferece uma forma concreta de cumprir o que a Portaria MEC nº 421/2026 chama de “estratégias de acompanhamento e de monitoramento do plano” (BRASIL, 2026, art. 11, III). A data de revisão de cada meta, de 90 dias por padrão, é mais frequente que a revisão anual exigida (BRASIL, 2026, art. 7º, § 3º), e a série de sessões dá ao professor os dados para essa revisão.
+
+\section{Avaliação heurística}\label{sec:5.3}
+
+A avaliação heurística é um método de inspeção em que avaliadores examinam a interface à luz de um pequeno conjunto de princípios gerais de usabilidade, as heurísticas, para encontrar seus problemas de usabilidade (NIELSEN, 1994a, p. 152). As telas do UNIA foram inspecionadas, junto com o código das views, segundo as nove heurísticas revisadas por Nielsen (1994a, p. 155), aqui em tradução livre: visibilidade do estado do sistema; correspondência entre o sistema e o mundo real; controle e liberdade do usuário; consistência e padrões; prevenção de erros; reconhecimento em vez de memorização; flexibilidade e eficiência de uso; estética e design minimalista; e ajuda para reconhecer, diagnosticar e corrigir erros. Somou-se a elas a heurística de ajuda e documentação, que fazia parte da lista anterior do autor (NIELSEN, 1994a, p. 156). Cada problema recebeu uma nota de severidade de 0 a 4: 1 indica um problema apenas estético, que só precisa ser corrigido se sobrar tempo; 2, um problema menor, de baixa prioridade; 3, um problema grave, de alta prioridade; e 4, uma catástrofe de usabilidade, a corrigir antes de o produto ser lançado (NIELSEN, 1994b).
+
+A inspeção encontrou pontos que atendem aos princípios. A rodada mostra em que ponto da sessão o aluno está, com o texto “Rodada 3 de 5” e uma barra de progresso, e cada resposta recebe retorno com símbolo, cor e texto; ao final, a ficha do aluno informa os acertos, as dicas e quantos registros foram gravados. A exclusão de alunos, metas e registros e o cancelamento da sessão pedem confirmação, e o cancelamento avisa que nada será registrado. Os formulários mostram no topo um resumo dos erros, com link para cada campo, e as mensagens dizem como resolver o problema, como em “Crie a meta antes de iniciar a sessão”. O vocabulário é o do professor, com estudo de caso, meta e nível de suporte, e textos curtos de ajuda explicam as metas, os indicadores e as sugestões. O Quadro~\ref{qua:11} reúne os problemas encontrados.
+
+\begin{tabelaIFTO}
+\setlength{\largtab}{\dimexpr\linewidth-8\tabcolsep-5\arrayrulewidth-1pt\relax}
+\begin{longtable}{|L{0.2891}|L{0.2661}|L{0.1549}|L{0.2899}|}
+\legendatab{quadro}{Problemas de usabilidade encontrados na avaliação heurística}{qua:11}{4}\\
+\hline
+\textbf{Princípio} & \textbf{Problema} & \textbf{Severidade} & \textbf{Recomendação} \\
+\hline
+\endfirsthead
+\multicolumn{4}{@{}r@{}}{\textit{(continuação)}}\\
+\hline
+\textbf{Princípio} & \textbf{Problema} & \textbf{Severidade} & \textbf{Recomendação} \\
+\hline
+\endhead
+\multicolumn{4}{@{}r@{}}{\textit{(continua)}}\\
+\endfoot
+\fontetab{4}{elaboração própria (2026), com os princípios de Nielsen (1994a) e a escala de severidade de Nielsen (1994b).}
+\endlastfoot
+Controle e liberdade do usuário; prevenção de erros & Durante o jogo, o menu do professor continua na tela, com a busca e o botão Sair. Um toque da criança tira o jogo da tela, e o Sair encerra o login sem confirmação e descarta a sessão em andamento & 3 & Corrigido: a sessão abre numa tela só com o jogo e o botão Cancelar, que pede confirmação \\ \hline
+Prevenção de erros; visibilidade do estado do sistema & Com duas metas na mesma área, a sessão grava o resultado na primeira, e a lista de jogos não mostra em qual meta cada jogo será registrado & 3 & Corrigido: a lista mostra, ao lado de cada jogo, a meta que receberá o resultado \\ \hline
+Prevenção de erros & A lista de jogos aceita jogos de áreas sem meta, e o aviso só aparece depois que a sessão começa & 2 & Corrigido: os jogos de áreas sem meta aparecem desabilitados, com aviso \\ \hline
+Consistência e padrões & O mesmo objeto se chama ora atividade, ora jogo, inclusive na ficha do aluno, e o PEI aparece nas telas como plano de apoio & 2 & Usar um termo por conceito em todas as telas \\ \hline
+Flexibilidade e eficiência de uso & Para comparar o progresso, o professor deve repetir o mesmo jogo, mas o atalho Fazer na tela só aparece para atividades ainda não aplicadas & 2 & Incluir em cada meta um atalho para repetir o último jogo \\ \hline
+Estética e design minimalista & A ficha reúne numa página o estudo de caso, as metas, a evolução, as sugestões, a lista de jogos e o histórico, o que exige muita rolagem & 2 & Acrescentar no topo links para cada parte da ficha \\ \hline
+Ajuda e documentação & A tela mostra o nível de suporte de cada sessão, mas não explica a regra que o produziu & 2 & Explicar a regra de classificação junto à tabela de evolução \\ \hline
+Reconhecimento em vez de memorização & Os valores de cada ponto do gráfico aparecem só ao passar o mouse; no tablet, é preciso buscá-los no histórico & 1 & Mostrar os valores também ao tocar no ponto \\ \hline
+Visibilidade do estado do sistema & A última resposta da sessão não recebe retorno na tela: a sessão termina e abre a ficha do aluno & 1 & Mostrar uma tela final com o retorno e uma mensagem de encerramento \\ \hline
+Correspondência entre o sistema e o mundo real & A variação aparece em pontos percentuais, termo pouco familiar fora das áreas de exatas & 1 & Acompanhar o número de uma frase simples, como “acertou mais na segunda metade” \\ \hline
+\end{longtable}
+\end{tabelaIFTO}
+
+Foram encontrados dez problemas: dois graves, cinco menores e três estéticos, e nenhum na categoria de catástrofe. Os dois graves afetavam a confiança no histórico, que é o centro do sistema: um podia interromper a sessão e descartar as respostas, e o outro podia gravar o resultado na meta errada sem que o professor percebesse. Por isso, foram corrigidos logo depois da avaliação: a sessão de jogos passou a abrir numa tela sem o menu do professor, e a lista de jogos da ficha passou a mostrar a meta que receberá cada resultado e a desabilitar os jogos de áreas sem meta, o que resolveu também o terceiro problema do quadro. A regra que define a meta de destino ganhou um teste automatizado. Os demais problemas, menores ou estéticos, tratam de nomes, atalhos e explicações e podem ser corrigidos depois, na ordem da severidade.
+
+A avaliação tem dois limites. Foi feita por um único avaliador, que também participou do desenvolvimento, enquanto Nielsen e Molich (1990, p. 255) desaconselham confiar na avaliação de uma só pessoa e recomendam de três a cinco avaliadores, trabalhando de forma independente; pelo mesmo motivo, as notas de severidade são de uma só pessoa, e Nielsen (1994b) considera satisfatória, para muitos fins práticos, a média das notas de três avaliadores. Além disso, a inspeção aponta problemas prováveis, mas não mostra como professores e crianças de fato usam o sistema, o que depende de testes com usuários.
+
+\section{Limitações}\label{sec:5.4}
+
+As limitações se dividem em três grupos. As de medição e de conteúdo pedagógico são:
+
+\begin{alineasIFTO}
+  \item os parâmetros não foram validados: a regra de classificação, as cinco rodadas, as quantidades até 5 ou 10, o mínimo de seis sessões para a variação e os 90 dias de revisão são decisões do protótipo;
+  \item as 24 atividades foram propostas neste projeto e ainda não foram avaliadas por profissionais da educação especial;
+  \item na área de Comunicação Oral, o sistema mede apenas a compreensão: a criança ouve a palavra e toca na figura, e a produção oral, que exigiria captar a voz da criança, fica de fora;
+  \item as figuras são desenhos simples, não testados com crianças, e, se um desenho não for reconhecido, o jogo mede o desenho, e não a habilidade;
+  \item a variação mistura os jogos de uma meta, e trocar um jogo fácil por um difícil altera o resultado; para comparar o progresso, o professor deve repetir o mesmo jogo;
+  \item uma sessão com vários jogos grava o resultado na primeira meta de cada área, indicada ao lado de cada jogo; se o aluno tem duas metas na mesma área, o professor precisa usar o botão “Fazer na tela” da meta desejada;
+  \item as sugestões de atividades são uma regra de ordenação (mesma área, ainda não aplicada, compatível com o tipo de deficiência), e não uma recomendação pedagógica;
+  \item o tempo de resposta é gravado, mas ainda não entra nos indicadores nem na classificação.
+\end{alineasIFTO}
+
+As de acessibilidade são:
+
+\begin{alineasIFTO}
+  \item nenhum mini game atende o aluno com deficiência visual, porque todos dependem de ver as figuras;
+  \item não houve auditoria com leitor de tela, ferramenta automática ou usuários;
+  \item os detalhes de cada ponto do gráfico aparecem ao passar o mouse, mas não com o toque no tablet.
+\end{alineasIFTO}
+
+As técnicas são:
+
+\begin{alineasIFTO}
+  \item as telas que exigem login ainda não passaram pelo roteiro de testes manuais do Apêndice B;
+  \item o limite de tentativas de login é contado por sessão, e não por endereço, de modo que apagar o cookie reinicia a contagem;
+  \item não há limite para pedidos de recuperação de senha;
+  \item os modelos usam métodos estáticos, simples de ler, mas difíceis de testar com um banco simulado;
+  \item não há migrações de banco: o script de instalação recria o banco e apaga os dados existentes;
+  \item o estado da sessão de jogos fica na sessão do servidor, e, se o navegador for fechado no meio, nada é gravado;
+  \item as observações do estudo de caso não são criptografadas;
+  \item não há testes automatizados de tela.
+\end{alineasIFTO}

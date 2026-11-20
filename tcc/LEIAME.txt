@@ -1,0 +1,32 @@
+Projeto LaTeX do TCC (UNIA), classe abnTeX2, no padrão das Diretrizes do IFTO (2. ed., 2020)
+
+ARQUIVOS
+  tcc.tex          arquivo principal: dados do trabalho, campos a preencher, capa, folha de rosto,
+                   ficha, folha de aprovação e a ordem de todas as partes
+  estilo.tex       formatação: fonte, margens, títulos, legendas, quadros, alíneas, referências
+  pretextual\      resumo, abstract e lista de siglas
+  textual\         capítulos 1 a 6
+  postextual\      referências e apêndices A e B
+  figuras\         Gráfico 1 e Figuras 1 a 8 (PNG)
+
+COMO COMPILAR
+  Sumário, listas e referências cruzadas ("Figura 4", "seção 2.5") são automáticos; por isso o
+  LaTeX precisa de duas ou três passagens (o Tectonic e o latexmk fazem isso sozinhos).
+  - Tectonic (um único executável):      tectonic tcc.tex
+  - TeX Live ou MiKTeX:                   latexmk -xelatex tcc.tex
+  - Overleaf: envie a pasta compactada em .zip e escolha o compilador XeLaTeX
+    (Menu > Compiler). Com pdfLaTeX também compila.
+
+CAMPOS A PREENCHER
+  No começo de tcc.tex, na parte "CAMPOS A PREENCHER": orientador(a), coorientador(a) (se não
+  houver, deixe \def\coorientadorTCC{}), data de aprovação e banca. Enquanto não forem
+  preenchidos, aparecem no PDF entre << >>.
+  Ficha catalográfica: depois da aprovação, gere a ficha no sistema do IFTO e salve-a nesta
+  pasta como ficha_catalografica.pdf; ela entra sozinha no verso da folha de rosto.
+
+DE ONDE VEIO O TEXTO
+  Os arquivos das pastas pretextual, textual e postextual foram gerados a partir do documento
+  do Claude Docs por ..\ferramentas\gera_latex.php. Daqui em diante, edite os .tex diretamente,
+  ou edite o documento e gere de novo (o que apaga as edições feitas nos .tex).
+  As referências estão escritas à mão no padrão ABNT (NBR 6023:2018), conferidas uma a uma na
+  Etapa C; por isso não se usa BibTeX.

@@ -1,0 +1,79 @@
+% Gerado de tcc.md (exportado do Claude Docs) por ferramentas/gera_latex.php em 12/11/2026 21:45.
+% Para mudar o texto, edite este arquivo; se gerar de novo a partir do documento, as edições feitas aqui se perdem.
+
+\chapter{METODOLOGIA}\label{cap:3}
+
+Este capítulo classifica a pesquisa e descreve como o UNIA foi desenvolvido e verificado.
+
+\section{Classificação da pesquisa}\label{sec:3.1}
+
+Quanto à natureza, a pesquisa é aplicada, pois busca gerar conhecimento para resolver um problema prático e específico: o acompanhamento das metas do PEI (PRODANOV; FREITAS, 2013). Quanto aos objetivos, é exploratória, porque trata de um tema com poucos trabalhos que liguem o PEI à medição automática do desempenho e procura torná-lo mais claro por meio da construção de uma solução (GIL, 2017). Quanto aos procedimentos, combina pesquisa bibliográfica, sobre o PEI, os níveis de suporte, a medição do progresso e os jogos digitais; pesquisa documental, sobre a legislação da educação especial; e o desenvolvimento de um artefato de software.
+
+Esse último procedimento aproxima o trabalho da \textit{Design Science Research}, abordagem que orienta a construção e a avaliação de artefatos voltados a problemas reais (DRESCH; LACERDA; ANTUNES JÚNIOR, 2015). Aqui, a avaliação do artefato se limitou à verificação técnica descrita na seção~\ref{sec:3.4}; a avaliação com professores e alunos fica para uma etapa posterior.
+
+\section{Etapas do desenvolvimento}\label{sec:3.2}
+
+O UNIA foi construído de forma incremental, em versões que acrescentaram funcionalidades à anterior e foram revistas a cada entrega (SOMMERVILLE, 2011). O Quadro~\ref{qua:2} resume as três versões.
+
+\begin{tabelacurta}
+\setlength{\largtab}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth-1pt\relax}
+\legenda{quadro}{Versões do UNIA}\label{qua:2}\vspace{4pt}
+\begin{tabular}{|L{0.1506}|L{0.8494}|}
+\hline
+\textbf{Versão} & \textbf{Principais mudanças} \\
+\hline
+1 & Catálogo de atividades por tipo de deficiência, login e cadastro de usuários. \\ \hline
+2 & Reestruturação no padrão Model-View-Controller (MVC), com roteador central; cadastro de alunos e de metas do PEI, com as áreas e os níveis do AppPEI; registros de acompanhamento; proteção contra Cross-Site Request Forgery (CSRF), consultas parametrizadas e senhas com hash. \\ \hline
+3 & Sessões de mini games na tela, com medição automática; catálogo restrito a atividades medidas pelo sistema (24 atividades, seis por área); evolução por meta com indicadores e gráficos. \\ \hline
+\end{tabular}
+\fonte{elaboração própria (2026).}
+\end{tabelacurta}
+
+A versão 3 concentra a contribuição deste trabalho e seguiu cinco passos:
+
+\begin{passos}
+  \item Levantamento: leitura da dissertação de Francisco (2023), da legislação e dos trabalhos relacionados, localizados pela busca descrita na seção~\ref{sec:2.5}, para definir as áreas, os níveis de suporte e o que o sistema deveria registrar.
+  \item Definição do que medir: escolha das habilidades que podem ser medidas na tela sem depender de anotação do professor.
+  \item Modelagem: diagrama de pacotes da arquitetura, diagrama de classes do domínio e diagrama de sequência da sessão, na notação da Unified Modeling Language (UML), versão 2.5.1 (OBJECT MANAGEMENT GROUP, 2017), e modelo lógico do banco de dados na notação pé de galinha (WATT; ENG, 2014), todos desenhados em Scalable Vector Graphics (SVG).
+  \item Implementação: banco de dados, regras de medição, mini games, telas e gráficos.
+  \item Verificação: testes automatizados, conferência das rotas e teste de ponta a ponta (seção~\ref{sec:3.4}).
+\end{passos}
+
+O passo 2 levou a duas decisões que moldaram o sistema. A primeira foi retirar do catálogo as atividades físicas, como as feitas com material concreto, objetos reais, cartões e relevo, porque o resultado delas dependeria de registro manual. A segunda foi não permitir que o professor digite ou edite resultados: todo registro de desempenho nasce de uma sessão medida pelo sistema, e o professor só pode excluir uma sessão feita por engano.
+
+\section{Tecnologias utilizadas}\label{sec:3.3}
+
+O UNIA foi escrito na linguagem PHP: Hypertext Preprocessor (PHP), sem framework. O núcleo que um framework normalmente oferece (roteador, classes-base de controladores e modelos, validação, sessão e proteção contra CSRF) foi implementado no próprio projeto, em classes pequenas, para manter o código legível e sem dependências além do PHPMailer. O código do sistema, sem contar bibliotecas de terceiros, tem 61 arquivos PHP, com cerca de 5.100 linhas, e uma folha de estilo com 285 linhas. O Quadro~\ref{qua:3} lista as tecnologias.
+
+\begin{tabelacurta}
+\setlength{\largtab}{\dimexpr\linewidth-4\tabcolsep-3\arrayrulewidth-1pt\relax}
+\legenda{quadro}{Tecnologias utilizadas}\label{qua:3}\vspace{4pt}
+\begin{tabular}{|L{0.467}|L{0.533}|}
+\hline
+\textbf{Tecnologia} & \textbf{Uso no UNIA} \\
+\hline
+PHP 8.2 & Linguagem do servidor, no padrão MVC \\ \hline
+MySQL & Banco de dados relacional acessado por PHP Data Objects (PDO); no XAMPP, o servidor é o MariaDB 10.4, compatível com o MySQL \\ \hline
+Apache (pacote XAMPP) & Servidor web local, com URLs amigáveis \\ \hline
+HTML, Cascading Style Sheets (CSS) e SVG & Telas, figuras dos mini games, gráficos desenhados no servidor e diagramas deste trabalho \\ \hline
+Web Speech Application Programming Interface (API) & Voz do navegador no mini game de ouvir a palavra \\ \hline
+PHPMailer, via Composer & Envio do e-mail de recuperação de senha \\ \hline
+Font Awesome & Ícones da interface \\ \hline
+\end{tabular}
+\fonte{elaboração própria (2026).}
+\end{tabelacurta}
+
+\section{Verificação}\label{sec:3.4}
+
+A verificação teve seis frentes:
+
+\begin{alineasIFTO}
+  \item sintaxe: todos os arquivos PHP passaram pela verificação do interpretador (\textit{php -l});
+  \item testes automatizados: um script com 63 verificações das regras de negócio cobre a classificação do nível de suporte, as validações dos formulários, a montagem de cada um dos 12 mini games (repetida várias vezes, porque as rodadas são sorteadas), a dica, a meta de destino de cada área, a separação dos resultados por meta, os indicadores de evolução e os gráficos; o script não cobre telas nem banco de dados;
+  \item conferência estática: cada uma das 45 rotas aponta para um método existente, e cada classe e método chamado existe;
+  \item teste de ponta a ponta: num banco de dados temporário, criado e apagado para o teste, foram cadastrados professor, alunos e metas, executadas seis sessões por área e conferidos a evolução, as sugestões por tipo de deficiência e o cadastro de atividades;
+  \item inspeção visual: a ficha do aluno foi renderizada e conferida no navegador, inclusive em largura de tela reduzida;
+  \item avaliação heurística: as telas e o código das views foram inspecionados segundo as heurísticas de usabilidade de Nielsen (1994a), e cada problema encontrado recebeu uma nota de severidade de 0 a 4 (NIELSEN, 1994b).
+\end{alineasIFTO}
+
+As telas que exigem login ainda dependem de um roteiro de testes manuais, apresentado no Apêndice B. Todos os dados usados nos testes foram fictícios. Como não houve participação de pessoas, a pesquisa não foi submetida a comitê de ética; a avaliação com professores e alunos, prevista como trabalho futuro, exigirá essa submissão e o consentimento dos responsáveis pelas crianças.

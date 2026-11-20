@@ -1,0 +1,25 @@
+% Gerado de tcc.md (exportado do Claude Docs) por ferramentas/gera_latex.php em 12/11/2026 21:45.
+% Para mudar o texto, edite este arquivo; se gerar de novo a partir do documento, as edições feitas aqui se perdem.
+
+\capitulosemnumero{APÊNDICE B \textemdash{} ROTEIRO DE TESTES MANUAIS}\label{ap:B}
+
+Roteiro para execução no navegador, com dados fictícios e com o banco reinstalado pelo script \textit{database/banco\_acessibilidade.sql}, que apaga os dados existentes.
+
+\begin{conferir}
+  \item Importar o script do banco e conferir os 7 tipos de deficiência e as 24 atividades.
+  \item Cadastrar um professor com erros de validação e depois com dados corretos; entrar com senha certa e errada; conferir o bloqueio após 5 tentativas.
+  \item Recuperar a senha: o e-mail chega, o link redefine a senha e o mesmo link não funciona de novo.
+  \item Abrir /alunos sem login: o sistema deve levar ao login.
+  \item Com dois professores, conferir que um não abre o aluno, a meta nem o registro do outro (resposta 404).
+  \item Pedir dica e cancelar uma sessão: nada pode ser gravado; durante a sessão, o menu, a busca e o botão Sair não podem aparecer.
+  \item Abrir cada um dos 12 mini games e conferir se a cena aparece e se os botões respondem ao toque.
+  \item No mini game de ouvir a palavra, conferir se a voz fala a palavra (Chrome ou Edge).
+  \item Criar metas de matemática e de alfabetização digital, marcar dois jogos na sessão, responder tudo e conferir que nasceram dois registros, um por meta, com o detalhe de cada jogo.
+  \item Na lista de jogos da ficha, conferir a meta indicada ao lado de cada jogo e que os jogos de áreas sem meta ficam desabilitados.
+  \item No jogo de abrir e fechar o aplicativo, conferir no registro as três etapas e o tempo até abrir.
+  \item Repetir a sessão seis vezes na mesma meta e conferir a variação e os gráficos na ficha do aluno.
+  \item Excluir um registro do histórico e conferir que ele sai da evolução.
+  \item Abrir a sessão num tablet, ou na largura de tablet do navegador, e conferir se os botões são tocáveis.
+  \item Criar uma atividade com imagem e fonte, conferir a imagem e excluir a atividade sem perder o histórico do aluno.
+  \item Navegar só com o teclado, testar com o leitor de tela NVDA e rodar o Lighthouse.
+\end{conferir}

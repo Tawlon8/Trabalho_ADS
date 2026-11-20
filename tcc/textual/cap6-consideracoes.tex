@@ -1,0 +1,51 @@
+% Gerado de tcc.md (exportado do Claude Docs) por ferramentas/gera_latex.php em 12/11/2026 21:45.
+% Para mudar o texto, edite este arquivo; se gerar de novo a partir do documento, as edições feitas aqui se perdem.
+
+\chapter{CONSIDERAÇÕES FINAIS}\label{cap:6}
+
+Este trabalho desenvolveu o UNIA, um sistema web que apoia o professor no acompanhamento das metas do PEI e mede o desempenho do aluno por meio de mini games. A pergunta de pesquisa era como um sistema web poderia fazer esse acompanhamento medindo o desempenho de forma automática e mostrando a evolução ao longo do tempo. A resposta proposta é ligar cada atividade a uma meta do plano, medir cada resposta na tela e transformar as sessões de uma meta numa série com indicadores e gráficos, usando os mesmos níveis de suporte que o professor já usa para descrever o aluno.
+
+Os objetivos específicos foram atendidos da seguinte forma:
+
+\begin{alineasIFTO}
+  \item os elementos do PEI, os níveis de suporte e as exigências das normas de 2025 e 2026 foram identificados no capítulo~\ref{cap:2};
+  \item o cadastro de alunos, do estudo de caso e das metas por área, com nível inicial e data de revisão, foi modelado e implementado (seções~\ref{sec:4.1} e~\ref{sec:4.3});
+  \item os 12 formatos de mini game, distribuídos em 24 atividades nas quatro áreas do AppPEI, registram acerto, uso de dica e tempo de resposta (seção~\ref{sec:4.4});
+  \item a regra de classificação e os quatro indicadores de evolução foram definidos e apresentados em tabela e em gráficos que não dependem de cor (seções~\ref{sec:4.5} e~\ref{sec:4.6});
+  \item o sistema passou nas 63 verificações automatizadas e nas 30 verificações do teste de ponta a ponta (seção~\ref{sec:5.1}), e a avaliação heurística apontou dez problemas de usabilidade, dois deles graves, já corrigidos (seção~\ref{sec:5.3}).
+\end{alineasIFTO}
+
+A principal contribuição está em aproximar dois grupos de ferramentas que, nas fontes consultadas, aparecem separados: as que organizam o PEI e os jogos que trabalham habilidades. No UNIA, o jogo existe para alimentar a meta, e a meta passa a ter um histórico medido. Isso vai ao encontro das normas recentes, que exigem um PEI com atualização contínua e com estratégias de acompanhamento e de monitoramento. Vai também ao encontro da ideia que motivou o projeto: tornar visível o caminho do aluno da ajuda à autonomia, sessão após sessão.
+
+Os resultados, porém, são técnicos. O sistema funciona como projetado, mas não foi usado por professores nem por alunos, e a regra de classificação, os parâmetros e as atividades são hipóteses do protótipo. A próxima etapa necessária é a validação pedagógica.
+
+\section{Trabalhos futuros}\label{sec:6.1}
+
+Os trabalhos futuros se organizam em três frentes. Na validação:
+
+\begin{alineasIFTO}
+  \item avaliar o sistema com professores do AEE e da sala comum, com aprovação de comitê de ética, para validar a regra de classificação, os parâmetros e as atividades;
+  \item testar as figuras e os jogos com crianças, com o consentimento dos responsáveis;
+  \item fazer uma auditoria de acessibilidade com leitor de tela, ferramentas automáticas e usuários, e repetir a avaliação heurística com três a cinco avaliadores independentes.
+\end{alineasIFTO}
+
+Nas funcionalidades:
+
+\begin{alineasIFTO}
+  \item tornar a matriz de habilidades editável, como sugeriram os avaliadores do AppPEI;
+  \item incluir um inventário de avaliação inicial e gerar o documento do PEI em Portable Document Format (PDF), com o conteúdo mínimo da Portaria MEC nº 421/2026;
+  \item criar um relatório para as famílias, que atenda ao registro das devolutivas previsto na mesma portaria;
+  \item permitir que vários professores, como o do AEE e o da sala comum, acompanhem o mesmo aluno;
+  \item criar mini games para alunos com deficiência visual, baseados em áudio e teclado, além de atividades de arrastar e soltar e de contagem de sílabas;
+  \item usar o tempo de resposta nos indicadores e comparar a evolução por jogo e entre metas;
+  \item permitir escolher a meta de destino nas sessões com vários jogos e expor o campo de configuração das atividades no formulário de cadastro;
+  \item mostrar os detalhes dos pontos do gráfico também pelo toque e corrigir os problemas menores e estéticos da avaliação heurística (Quadro~\ref{qua:11}).
+\end{alineasIFTO}
+
+Na parte técnica:
+
+\begin{alineasIFTO}
+  \item limitar as tentativas de login por endereço e os pedidos de recuperação de senha;
+  \item criptografar os dados sensíveis e definir uma política de retenção;
+  \item adotar migrações de banco de dados e testes automatizados de tela.
+\end{alineasIFTO}

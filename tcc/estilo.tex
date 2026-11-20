@@ -1,0 +1,180 @@
+% =====================================================================================
+% estilo.tex: formatação do TCC segundo as Diretrizes para Elaboração de TCC de
+% Graduação do IFTO (2. ed., 2020) e a ABNT NBR 14724, sobre a classe abnTeX2.
+% Compila com XeLaTeX ou LuaLaTeX (recomendado) e também com pdfLaTeX.
+% =====================================================================================
+
+% ---------- Fonte: Arial 12 pt (TeX Gyre Heros, de métricas equivalentes às da Arial) ----------
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{tgheros}
+  \renewcommand*{\familydefault}{\sfdefault}
+\else
+  \usepackage{fontspec}
+  \setmainfont{texgyreheros}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+    ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+  \setsansfont{texgyreheros}[Extension=.otf, UprightFont=*-regular, BoldFont=*-bold,
+    ItalicFont=*-italic, BoldItalicFont=*-bolditalic]
+\fi
+
+% ---------- Pacotes ----------
+\usepackage{indentfirst}          % recuo também no primeiro parágrafo de cada seção
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{longtable}            % quadros e tabelas que podem passar de uma página
+\usepackage{enumitem}
+\usepackage{amsmath,amssymb}
+\usepackage{xurl}                 % endereços longos quebram em qualquer ponto
+\usepackage{pdfpages}             % para incluir a ficha catalográfica em PDF
+\urlstyle{same}                   % endereço na mesma fonte do texto, como pede a ABNT
+
+% ---------- Página: A4, margens 3 cm (superior e esquerda) e 2 cm (inferior e direita) ----------
+\setlrmarginsandblock{3cm}{2cm}{*}
+\setulmarginsandblock{3cm}{2cm}{*}
+\checkandfixthelayout
+
+% ---------- Número da página: só o número, no canto superior direito, em 10 pt ----------
+\makeoddhead{abntheadings}{}{}{\footnotesize\thepage}
+\makeevenhead{abntheadings}{\footnotesize\thepage}{}{}
+\makeheadrule{abntheadings}{\textwidth}{0pt}
+
+% ---------- Parágrafos: recuo de 1,25 cm, espaço 1,5, sem espaço extra entre parágrafos ----------
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{3em}   % evita linhas estouradas com nomes de código longos
+
+% ---------- Títulos: todos em 12 pt; primário em CAIXA ALTA e negrito, secundário em negrito,
+%            terciário sem destaque, quaternário em itálico (como na versão em Word) ----------
+\def\ABNTEXchapterfont{\bfseries}
+\def\ABNTEXchapterfontsize{\normalsize}
+\def\ABNTEXsectionfont{\bfseries}
+\def\ABNTEXsectionfontsize{\normalsize}
+\def\ABNTEXsubsectionfont{\normalfont}
+\def\ABNTEXsubsectionfontsize{\normalsize}
+\def\ABNTEXsubsubsectionfont{\itshape}
+\def\ABNTEXsubsubsectionfontsize{\normalsize}
+
+% Sumário com o mesmo destaque dos títulos no texto (NBR 6027)
+\renewcommand{\cftchapterfont}{\bfseries}
+\renewcommand{\cftchapterpagefont}{\bfseries}
+\renewcommand{\cftsectionfont}{\bfseries}
+\renewcommand{\cftsectionpagefont}{\bfseries}
+\renewcommand{\cftsubsectionfont}{\normalfont}
+\renewcommand{\cftsubsectionpagefont}{\normalfont}
+
+% Título sem número, centralizado e no sumário (REFERÊNCIAS, APÊNDICE A...)
+\newcommand{\capitulosemnumero}[1]{%
+  \begingroup
+    \renewcommand{\printchaptertitle}[1]{\centering\ABNTEXchapterfont\ABNTEXchapterfontsize ##1}%
+    \chapter*{#1}%
+  \endgroup
+  \addcontentsline{toc}{chapter}{\protect\numberline{}#1}}
+
+% ---------- Nomes das listas ----------
+\addto\captionsbrazil{%
+  \renewcommand{\listfigurename}{Lista de figuras}%
+  \renewcommand{\listtablename}{Lista de tabelas}%
+  \renewcommand{\figurename}{Figura}%
+  \renewcommand{\tablename}{Tabela}}
+
+% ---------- Gráficos e quadros: contadores e listas próprios (receita do abnTeX2) ----------
+\newcommand{\graficoname}{Gráfico}
+\newcommand{\listofgraficosname}{Lista de gráficos}
+\newfloat[chapter]{grafico}{lgf}{\graficoname}      % extensão lgf: "log" é o log do LaTeX
+\newlistof{listofgraficos}{lgf}{\listofgraficosname}
+\newlistentry{grafico}{lgf}{0}
+\counterwithout{grafico}{chapter}
+
+\newcommand{\quadroname}{Quadro}
+\newcommand{\listofquadrosname}{Lista de quadros}
+\newfloat[chapter]{quadro}{loq}{\quadroname}
+\newlistof{listofquadros}{loq}{\listofquadrosname}
+\newlistentry{quadro}{loq}{0}
+\counterwithout{quadro}{chapter}
+
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\counterwithout{equation}{chapter}   % equação (1), e não (4.1)
+
+% Entradas das listas: "Figura 1 — Título ...... página"
+\renewcommand{\cftfigurename}{\figurename\space}
+\renewcommand{\cfttablename}{\tablename\space}
+\renewcommand{\cftgraficoname}{\graficoname\space}
+\renewcommand{\cftquadroname}{\quadroname\space}
+\renewcommand*{\cftfigureaftersnum}{\hfill\textemdash\hfill}
+\renewcommand*{\cfttableaftersnum}{\hfill\textemdash\hfill}
+\renewcommand*{\cftgraficoaftersnum}{\hfill\textemdash\hfill}
+\renewcommand*{\cftquadroaftersnum}{\hfill\textemdash\hfill}
+\setlength{\cftfigurenumwidth}{6.2em}
+\setlength{\cfttablenumwidth}{6.6em}
+\setlength{\cftgraficonumwidth}{6.8em}
+\setlength{\cftquadronumwidth}{7.4em}
+\setlength{\cftfigureindent}{0pt}
+\setlength{\cfttableindent}{0pt}
+\setlength{\cftgraficoindent}{0pt}
+\setlength{\cftquadroindent}{0pt}
+
+% ---------- Legendas: acima da ilustração, centralizadas, em 10 pt; fonte abaixo, em 10 pt ----------
+\makeatletter
+\newcommand{\legenda}[2]{% #1 = contador (figure, grafico, quadro, table); #2 = título
+  \refstepcounter{#1}%
+  \addcontentsline{\csname ext@#1\endcsname}{#1}%
+    {\protect\numberline{\csname the#1\endcsname}{\ignorespaces #2}}%
+  {\centering\SingleSpacing\footnotesize
+   \csname #1name\endcsname~\csname the#1\endcsname~\textemdash~#2\par}}
+\makeatother
+\providecommand{\fonte}{}
+\renewcommand{\fonte}[1]{\par\vspace{4pt}{\centering\SingleSpacing\footnotesize Fonte: #1\par}}
+
+% Figura ou gráfico: legenda, imagem e fonte ficam juntas, no ponto do texto ou no pé da página
+% (posição [hbp]): nunca antes do trecho que as cita e sem deixar meia página em branco.
+\newcommand{\legendafig}[3]{\centering\legenda{#1}{#2}\label{#3}\vspace{4pt}}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.75}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+
+% Quadros e tabelas (longtable): a legenda é a primeira linha e a fonte, a última,
+% para que nunca se separem da tabela; o cabeçalho se repete nas páginas seguintes.
+\newlength{\largtab}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash\hspace{0pt}}p{#1\largtab}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1\largtab}}
+% O longtable soma 1 ao contador de tabelas a cada uso; o -1 desfaz isso, e só \legenda numera.
+\newenvironment{tabelaIFTO}
+  {\par\addtocounter{table}{-1}\SingleSpacing\footnotesize\setlength{\extrarowheight}{2pt}%
+   \setlength{\LTpre}{0.5\baselineskip}\setlength{\LTpost}{0.5\baselineskip}}
+  {\par}
+\newcommand{\legendatab}[4]{% #1 contador, #2 título, #3 rótulo, #4 colunas
+  \multicolumn{#4}{@{}c@{}}{\parbox{\linewidth}{\legenda{#1}{#2}\label{#3}\vspace{4pt}}}}
+% Quadro ou tabela curta: um bloco só, que vai inteiro para a página seguinte se não couber
+\newenvironment{tabelacurta}
+  {\par\addvspace{0.5\baselineskip}\noindent\begin{minipage}{\linewidth}\centering
+   \SingleSpacing\footnotesize\setlength{\extrarowheight}{2pt}}
+  {\end{minipage}\par\addvspace{0.5\baselineskip}}
+\newcommand{\fontetab}[2]{% #1 colunas, #2 texto da fonte
+  \multicolumn{#1}{@{}c@{}}{\parbox{\linewidth}{\vspace{4pt}\centering\footnotesize Fonte: #2}}}
+
+% ---------- Alíneas (NBR 6024), passos numerados e lista de conferência ----------
+\newlist{alineasIFTO}{enumerate}{1}
+\setlist[alineasIFTO]{label=\alph*), labelindent=\parindent, leftmargin=*, align=left,
+  topsep=0pt, partopsep=0pt, itemsep=0pt, parsep=0pt}
+\newlist{passos}{enumerate}{1}
+\setlist[passos]{label=\arabic*., labelindent=\parindent, leftmargin=*, align=left,
+  topsep=0pt, partopsep=0pt, itemsep=0pt, parsep=0pt}
+\newlist{conferir}{itemize}{1}
+\setlist[conferir]{label=$\square$, labelindent=\parindent, leftmargin=*, align=left,
+  topsep=0pt, partopsep=0pt, itemsep=0pt, parsep=0pt}
+
+% ---------- Referências: espaço simples, alinhadas à esquerda, separadas por uma linha em branco ----------
+\newenvironment{referenciasIFTO}
+  {\par\SingleSpacing\raggedright\setlength{\parindent}{0pt}\setlength{\parskip}{\baselineskip}}
+  {\par}
+
+% ---------- Campos ainda não preenchidos ----------
+% (o \kern impede que a fonte junte << e >> em « e »)
+\newcommand{\pendente}[1]{\textless\kern0pt\textless#1\textgreater\kern0pt\textgreater}

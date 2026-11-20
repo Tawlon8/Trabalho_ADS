@@ -1,0 +1,193 @@
+% !TeX program = xelatex
+% =====================================================================================
+% TCC: UNIA, sistema web para acompanhar e medir a evolução de alunos da educação
+% especial com base no Plano Educacional Individualizado.
+% IFTO, Campus Colinas do Tocantins, CST em Análise e Desenvolvimento de Sistemas.
+%
+% Compilar: tectonic tcc.tex   ou   latexmk -xelatex tcc.tex   (ou pdfLaTeX, no Overleaf).
+% O texto de cada capítulo está nas pastas pretextual, textual e postextual.
+% =====================================================================================
+\documentclass[12pt, oneside, a4paper, chapter=TITLE, english, brazil]{abntex2}
+
+\input{estilo}
+
+% ===================== CAMPOS A PREENCHER (ainda pendentes) =====================
+% Troque o conteúdo de \pendente{...} pelo dado real. Se não houver coorientador,
+% deixe a definição vazia: \def\coorientadorTCC{}
+\newcommand{\orientadorTCC}{Prof. Dr. Ronneesley Moura Teles}
+\def\coorientadorTCC{Me. Laercio Pontin Junior}
+\newcommand{\dataaprovacaoTCC}{\pendente{dd/mm/aaaa}}
+\newcommand{\bancaUmNome}{Prof. Dr. Ronneesley Moura Teles (Orientador)}
+\newcommand{\bancaUmInst}{IFTO -- Campus Colinas do Tocantins}
+\newcommand{\bancaDoisNome}{Prof. Esp. Matheus Nunes dos Santos}
+\newcommand{\bancaDoisInst}{IFTO -- Campus Colinas do Tocantins}
+\newcommand{\bancaTresNome}{Prof. Lic. Tecnólogo Leonardo Xavier Brito}
+\newcommand{\bancaTresInst}{IFTO -- Campus Colinas do Tocantins}
+
+% ===================== DADOS DO TRABALHO =====================
+\newcommand{\autorTCC}{TAWLON LUCAS ROSENO}
+\newcommand{\naturezaTCC}{Trabalho de Conclusão de Curso apresentado à Coordenação do Curso
+  Superior de Tecnologia em Análise e Desenvolvimento de Sistemas da Unidade Campus Colinas do
+  Tocantins, do Instituto Federal do Tocantins, como exigência à obtenção do título de
+  Tecnólogo em Análise e Desenvolvimento de Sistemas.}
+\newcommand{\localTCC}{COLINAS DO TOCANTINS -- TO}
+\newcommand{\anoTCC}{2026}
+
+\titulo{UNIA: sistema web para acompanhar e medir a evolução de alunos da educação especial
+  com base no Plano Educacional Individualizado}
+\autor{Tawlon Lucas Roseno}
+\local{Colinas do Tocantins -- TO}
+\data{2026}
+\instituicao{Instituto Federal de Educação, Ciência e Tecnologia do Tocantins}
+
+\makeatletter
+\hypersetup{
+  pdftitle={\@title},
+  pdfauthor={\@author},
+  pdfsubject={Trabalho de Conclusão de Curso},
+  pdfkeywords={Plano Educacional Individualizado, Educação especial, Jogos digitais},
+  pdflang={pt-BR},
+  hidelinks,
+  hypertexnames=false,
+  bookmarksdepth=4}
+\makeatother
+
+% Natureza do trabalho: bloco de 8 cm junto à margem direita, em espaço simples
+\newcommand{\blocoNatureza}[1]{%
+  \hspace*{\fill}\begin{minipage}{8cm}\SingleSpacing\setlength{\parindent}{0pt}#1\end{minipage}\par}
+
+\begin{document}
+
+\selectlanguage{brazil}
+\frenchspacing
+
+% =====================================================================================
+\pretextual
+% =====================================================================================
+
+% ---------- Capa (não é contada) ----------
+\begin{capa}
+  \centering\bfseries
+  INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA DO TOCANTINS\par
+  CAMPUS COLINAS DO TOCANTINS\par
+  CURSO SUPERIOR DE TECNOLOGIA EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS\par
+  \vspace{\stretch{5}}
+  \autorTCC\par
+  \vspace{\stretch{6}}
+  UNIA: SISTEMA WEB PARA ACOMPANHAR E MEDIR A EVOLUÇÃO DE ALUNOS DA EDUCAÇÃO ESPECIAL COM BASE
+  NO PLANO EDUCACIONAL INDIVIDUALIZADO\par
+  \vspace{\stretch{9}}
+  \localTCC\par
+  \anoTCC\par
+\end{capa}
+
+% ---------- Folha de rosto ----------
+\begin{center}
+  \textbf{\autorTCC}
+\end{center}
+\vspace{\stretch{8}}
+\begin{center}
+  \textbf{UNIA: sistema web para acompanhar e medir a evolução de alunos da educação especial com
+  base no Plano Educacional Individualizado}
+\end{center}
+\vspace{\stretch{3}}
+\blocoNatureza{\naturezaTCC\par\vspace{\baselineskip}
+  {\raggedright Orientador: \orientadorTCC\par
+  \ifx\coorientadorTCC\empty\else Coorientador: \coorientadorTCC\par\fi}}
+\vspace{\stretch{8}}
+\begin{center}
+  \textbf{\localTCC}\par
+  \textbf{\anoTCC}
+\end{center}
+\newpage
+
+% ---------- Ficha catalográfica (verso da folha de rosto) ----------
+% Depois da aprovação, gere a ficha no sistema do IFTO e salve como ficha_catalografica.pdf
+% nesta pasta: ela entra aqui automaticamente.
+\IfFileExists{ficha_catalografica.pdf}{%
+  \includepdf{ficha_catalografica.pdf}}{%
+  \begin{fichacatalografica}
+    \vspace*{\fill}
+    \begin{center}
+      \url{https://si.ifto.edu.br/fichacatalografica/}
+    \end{center}
+    \vspace*{\fill}
+  \end{fichacatalografica}}
+
+% ---------- Folha de aprovação ----------
+\begin{folhadeaprovacao}
+  \begin{center}
+    \textbf{\autorTCC}
+
+    \vspace{2\baselineskip}
+    \textbf{UNIA: sistema web para acompanhar e medir a evolução de alunos da educação especial
+    com base no Plano Educacional Individualizado}
+  \end{center}
+  \vspace{\baselineskip}
+  \blocoNatureza{\naturezaTCC}
+  \vspace{2\baselineskip}
+  \noindent Aprovado em: \dataaprovacaoTCC.
+  \vspace{\baselineskip}
+  \begin{center}
+    \textbf{BANCA EXAMINADORA}
+  \end{center}
+  \SingleSpacing
+  \assinatura{\bancaUmNome \\ \bancaUmInst}
+  \assinatura{\bancaDoisNome \\ \bancaDoisInst}
+  \assinatura{\bancaTresNome \\ \bancaTresInst}
+\end{folhadeaprovacao}
+
+% ---------- Resumo e abstract ----------
+\begin{resumo}
+  \input{pretextual/resumo}
+\end{resumo}
+
+\begin{resumo}[Abstract]
+  \begin{otherlanguage*}{english}
+    \input{pretextual/abstract}
+  \end{otherlanguage*}
+\end{resumo}
+
+% ---------- Listas ----------
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+
+\pdfbookmark[0]{\listofgraficosname}{log}
+\listofgraficos*
+\cleardoublepage
+
+\pdfbookmark[0]{\listofquadrosname}{loq}
+\listofquadros*
+\cleardoublepage
+
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+
+\input{pretextual/siglas}
+\cleardoublepage
+
+% ---------- Sumário ----------
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+\cleardoublepage
+
+% =====================================================================================
+\textual
+% =====================================================================================
+\input{textual/cap1-introducao}
+\input{textual/cap2-fundamentacao}
+\input{textual/cap3-metodologia}
+\input{textual/cap4-sistema}
+\input{textual/cap5-resultados}
+\input{textual/cap6-consideracoes}
+
+% =====================================================================================
+\postextual
+% =====================================================================================
+\input{postextual/referencias}
+\input{postextual/apendice-a}
+\input{postextual/apendice-b}
+
+\end{document}

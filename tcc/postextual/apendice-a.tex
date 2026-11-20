@@ -1,0 +1,71 @@
+% Gerado de tcc.md (exportado do Claude Docs) por ferramentas/gera_latex.php em 12/11/2026 21:45.
+% Para mudar o texto, edite este arquivo; se gerar de novo a partir do documento, as edições feitas aqui se perdem.
+
+\capitulosemnumero{APÊNDICE A \textemdash{} ROTAS DO SISTEMA}\label{ap:A}
+
+O Quadro~\ref{qua:12} lista as rotas definidas no arquivo \textit{config/routes.php}. “Visitante” indica rota acessível apenas sem login, como o próprio login.
+
+\begin{tabelaIFTO}
+\setlength{\largtab}{\dimexpr\linewidth-8\tabcolsep-5\arrayrulewidth-1pt\relax}
+\begin{longtable}{|L{0.0981}|L{0.3709}|L{0.3585}|L{0.1725}|}
+\legendatab{quadro}{Rotas do sistema}{qua:12}{4}\\
+\hline
+\textbf{Método} & \textbf{URL} & \textbf{Controlador e ação} & \textbf{Acesso} \\
+\hline
+\endfirsthead
+\multicolumn{4}{@{}r@{}}{\textit{(continuação)}}\\
+\hline
+\textbf{Método} & \textbf{URL} & \textbf{Controlador e ação} & \textbf{Acesso} \\
+\hline
+\endhead
+\multicolumn{4}{@{}r@{}}{\textit{(continua)}}\\
+\endfoot
+\fontetab{4}{elaboração própria (2026), a partir de \textit{config/routes.php}.}
+\endlastfoot
+GET & /login & Auth: \textit{formLogin()} & Visitante \\ \hline
+POST & /login & Auth: \textit{login()} & Visitante \\ \hline
+GET & /cadastro & Auth: \textit{formCadastro()} & Visitante \\ \hline
+POST & /cadastro & Auth: \textit{cadastro()} & Visitante \\ \hline
+GET & /esqueci-senha & Senha: \textit{formEsqueci()} & Visitante \\ \hline
+POST & /esqueci-senha & Senha: \textit{enviar()} & Visitante \\ \hline
+GET & /redefinir-senha/\{token\} & Senha: \textit{formRedefinir()} & Visitante \\ \hline
+POST & /redefinir-senha/\{token\} & Senha: \textit{redefinir()} & Visitante \\ \hline
+POST & /logout & Auth: \textit{logout()} & Logado \\ \hline
+GET & / & Home: \textit{index()} & Logado \\ \hline
+GET & /perfil & Perfil: \textit{mostrar()} & Logado \\ \hline
+POST & /perfil & Perfil: \textit{atualizar()} & Logado \\ \hline
+POST & /perfil/senha & Perfil: \textit{alterarSenha()} & Logado \\ \hline
+POST & /perfil/excluir & Perfil: \textit{excluir()} & Logado \\ \hline
+GET & /atividades & Atividade: \textit{index()} & Logado \\ \hline
+GET & /atividades/nova & Atividade: \textit{criar()} & Logado \\ \hline
+POST & /atividades & Atividade: \textit{salvar()} & Logado \\ \hline
+GET & /atividades/\{id\} & Atividade: \textit{mostrar()} & Logado \\ \hline
+GET & /atividades/\{id\}/editar & Atividade: \textit{editar()} & Logado \\ \hline
+POST & /atividades/\{id\}/editar & Atividade: \textit{atualizar()} & Logado \\ \hline
+POST & /atividades/\{id\}/excluir & Atividade: \textit{excluir()} & Logado \\ \hline
+GET & /alunos & Aluno: \textit{index()} & Logado \\ \hline
+GET & /alunos/novo & Aluno: \textit{criar()} & Logado \\ \hline
+POST & /alunos & Aluno: \textit{salvar()} & Logado \\ \hline
+GET & /alunos/\{id\} & Aluno: \textit{mostrar()} & Logado \\ \hline
+GET & /alunos/\{id\}/editar & Aluno: \textit{editar()} & Logado \\ \hline
+POST & /alunos/\{id\}/editar & Aluno: \textit{atualizar()} & Logado \\ \hline
+POST & /alunos/\{id\}/excluir & Aluno: \textit{excluir()} & Logado \\ \hline
+GET & /alunos/\{id\}/metas/nova & Meta: \textit{criar()} & Logado \\ \hline
+POST & /alunos/\{id\}/metas & Meta: \textit{salvar()} & Logado \\ \hline
+GET & /metas/\{id\}/editar & Meta: \textit{editar()} & Logado \\ \hline
+POST & /metas/\{id\}/editar & Meta: \textit{atualizar()} & Logado \\ \hline
+POST & /metas/\{id\}/excluir & Meta: \textit{excluir()} & Logado \\ \hline
+POST & /acompanhamentos/\{id\}/excluir & Acompanhamento: \textit{excluir()} & Logado \\ \hline
+GET & /alunos/\{id\}/sessao & Sessao: \textit{iniciar()} & Logado \\ \hline
+GET & /sessao & Sessao: \textit{mostrar()} & Logado \\ \hline
+POST & /sessao/responder & Sessao: \textit{responder()} & Logado \\ \hline
+POST & /sessao/dica & Sessao: \textit{dica()} & Logado \\ \hline
+POST & /sessao/cancelar & Sessao: \textit{cancelar()} & Logado \\ \hline
+GET & /tipos & TipoDeficiencia: \textit{index()} & Administrador \\ \hline
+GET & /tipos/novo & TipoDeficiencia: \textit{criar()} & Administrador \\ \hline
+POST & /tipos & TipoDeficiencia: \textit{salvar()} & Administrador \\ \hline
+GET & /tipos/\{id\}/editar & TipoDeficiencia: \textit{editar()} & Administrador \\ \hline
+POST & /tipos/\{id\}/editar & TipoDeficiencia: \textit{atualizar()} & Administrador \\ \hline
+POST & /tipos/\{id\}/excluir & TipoDeficiencia: \textit{excluir()} & Administrador \\ \hline
+\end{longtable}
+\end{tabelaIFTO}
